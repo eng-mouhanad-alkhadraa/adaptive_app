@@ -19,17 +19,19 @@ class CustomDrawer extends StatelessWidget {
     return const Drawer(
       backgroundColor: Color(0xffDBDBDB),
       elevation: 0,
-      child: Column(
-        children: [
-          DrawerHeader(
-            child: Icon(
-              FontAwesomeIcons.solidHeart,
-              size: 56,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            DrawerHeader(
+              child: Icon(
+                FontAwesomeIcons.solidHeart,
+                size: 56,
+              ),
             ),
-          ),
-          SizedBox(height: 16),
-          CustomDrawersItemsListView(items: items)
-        ],
+            SizedBox(height: 16),
+            CustomDrawersItemsListView(items: items)
+          ],
+        ),
       ),
     );
   }

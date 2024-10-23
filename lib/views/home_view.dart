@@ -25,8 +25,9 @@ class _HomeViewState extends State<HomeView> {
 
   AppBar? bulidAppBar(BuildContext context) {
     return MediaQuery.sizeOf(context).width - 32 < 900
-        ? AppBar(title: Text('Adaptive App'),
-            backgroundColor: Colors.black,
+        ? AppBar(
+            title: Text('Adaptive App'),
+            backgroundColor: Colors.black54,
             leading: GestureDetector(
               onTap: () {
                 ScaffoldKey.currentState!.openDrawer();
