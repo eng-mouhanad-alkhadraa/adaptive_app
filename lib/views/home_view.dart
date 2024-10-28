@@ -1,3 +1,4 @@
+import 'package:adaptive_app/views/colors_view.dart';
 import 'package:adaptive_app/widgets/custom_drawer.dart';
 import 'package:adaptive_app/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
@@ -24,8 +25,20 @@ class _HomeViewState extends State<HomeView> {
   }
 
   AppBar? bulidAppBar(BuildContext context) {
+    // - 32 < 900
     return MediaQuery.sizeOf(context).width - 32 < 900
         ? AppBar(
+            actions: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return ColorsView();
+                      },
+                    ));
+                  },
+                  icon: Icon(Icons.color_lens))
+            ],
             title: Text('Adaptive App'),
             backgroundColor: Colors.black54,
             leading: GestureDetector(
@@ -50,7 +63,7 @@ class _HomeViewState extends State<HomeView> {
 //   Widget build(BuildContext context) {
 //     return LayoutBuilder(builder: (context, constraints) {
 //       if (constraints.maxWidth < 900) {
-//         return 
+//         return
 //       } else {
 //         return SizedBox();
 //       }
